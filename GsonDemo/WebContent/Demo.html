@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.1.1.js"></script>
+<script>
+ $(document).ready(function(){
+	 var myObj;
+	 $("#sbt").click(function()
+			 {
+		 
+		 //$("#sbt").prop("disabled",true);
+		myObj={'ename':$("#ename").val(),'esal':$("#esal").val(),'eaddr':$("#eaddr").val()};
+		var str=JSON.stringify(myObj);
+		$.get("FormServ",{jsonobj:str},function(data){
+			alert(data);
+			$("p").text(data);
+		});
+	 });
+ });
+</script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div id="div1">
+<p></p>
+<h2>hello</h2>
+</div>
+<div>
+<form>
+<pre>
+Ename<input type="text" id="ename" /><br>
+Esal<input type="text" id="esal" /><br>
+Eaddr<input type="text" id="eaddr" /><br>
+<button type="button" id="sbt">LOGIN</button>
+</pre>
+</form>
+</div>
+</body>
+</html>
