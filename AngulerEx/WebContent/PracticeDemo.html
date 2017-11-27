@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="js/practicedemo.js"></script>
+<meta charset="ISO-8859-1">
+</head>
+<body ng-app="app" ng-controller="practicedemo">
+<button ng-click="getdata()">Click Here</button>
+<a href="Second.html">Next</a>
+<input type="text" ng-model="firstName" value="{{firstName}}">
+<p ng-bind="firstName"></p>
+<p>By Expression {{firstName}}</p>
+</body>
+</html>

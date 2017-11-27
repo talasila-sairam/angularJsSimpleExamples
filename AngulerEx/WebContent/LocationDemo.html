@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myMap(lat,lang)
+{
+var geocoder;
+geocoder = new google.maps.Geocoder();
+var latlng = new google.maps.LatLng(lat,lang);
+alert(latlng);
+geocoder.geocode(
+    {'latLng': latlng}, 
+    function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+                if (results[0]) {
+                    var add= results[0].formatted_address ;
+                    var  value=add.split(",");
+                    alert(add);
+                    count=value.length;
+                    alert(count);
+                    country=value[count-1];
+                    state=value[count-2];                                                                                                             
+                  var  city=value[count-3];
+                    alert("city name is: " + city);
+                }
+                else  {
+                    alert("address not found");
+                }
+        }
+         else {
+            alert("Geocoder failed due to: " + status);
+        }
+    }
+);
+}
+myMap(17.4221,78.3388);
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjVdX2brCinUre414ufP_d6L2ebtBdB9k"></script>
+<meta charset="ISO-8859-1">
+<title>LocationDemo</title>
+</head>
+<body>
+
+</body>
+</html>

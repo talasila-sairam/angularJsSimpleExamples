@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="js/Chart.min.js" ></script>
+  <script src="js/angular-chart.min.js" ></script>
+  <script src="js/jquery-3.1.1.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="css/framework/bootstrap.css">
+  <script src="js/PieChartDemo.js"></script>
+<meta charset="ISO-8859-1">
+</head>
+<body ng-app="app">
+
+<div ng-controller="app-ctrl" style="height: 200px;width: 200px;" >
+<canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-click="myfun" chart-options="options" ></canvas>
+</div><br><br>
+
+<div ng-controller="app-ctrl1" style="height: 200px;width: 200px;" align="center" >
+<canvas  class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options" ng-show="true"></canvas>
+</div>
+
+</body>
+</html>
